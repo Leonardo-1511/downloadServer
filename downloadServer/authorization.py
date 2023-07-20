@@ -10,7 +10,7 @@ def before_request():
     try:
         if int(replitUserId) == 7215759:
             return
-    except ValueError:
+    except Exception:
         pass
     if request.path in accepted_paths:
         return

@@ -161,22 +161,6 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
-name = "discord-py-slash-command"
-version = "4.2.1"
-description = "Easy, simple, scalable and modular: a Python API wrapper for interactions."
-category = "main"
-optional = false
-python-versions = ">=3.8.6"
-
-[package.dependencies]
-aiohttp = ">=3.8.1"
-
-[package.extras]
-dev = ["black", "flake8", "isort", "pre-commit", "karma-sphinx-theme", "sphinx", "sphinx-hoverxref"]
-lint = ["black", "flake8", "isort", "pre-commit"]
-readthedocs = ["karma-sphinx-theme", "sphinx", "sphinx-hoverxref"]
-
-[[package]]
 name = "flask"
 version = "2.2.2"
 description = "A simple framework for building complex web applications."
@@ -271,14 +255,6 @@ description = "multidict implementation"
 category = "main"
 optional = false
 python-versions = ">=3.7"
-
-[[package]]
-name = "numpy"
-version = "1.24.1"
-description = "Fundamental package for array computing in Python"
-category = "main"
-optional = false
-python-versions = ">=3.8"
 
 [[package]]
 name = "packaging"
@@ -596,7 +572,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10.0,<3.11"
-content-hash = "6f3bab31951ef7523b4df55637e288814246a31c6c41962ecc345bb8dd4cf543"
+content-hash = "64182d065219bfc04c380c3dc8d20ef36abcc0eb7fe0f5f975c3301b942a24e0"
 
 [metadata.files]
 aiohttp = []
@@ -612,7 +588,6 @@ click = []
 colorama = []
 cryptography = []
 debugpy = []
-discord-py-slash-command = []
 flask = []
 frozenlist = []
 idna = []
@@ -622,7 +597,6 @@ jedi = []
 jinja2 = []
 markupsafe = []
 multidict = []
-numpy = []
 packaging = []
 parso = []
 passlib = []
