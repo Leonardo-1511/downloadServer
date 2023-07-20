@@ -7,3 +7,4 @@ auth_url = f"https://www.dropbox.com/oauth2/authorize?client_id={os.environ['cli
 def authorize():
     request = auth_url
     return request
+    

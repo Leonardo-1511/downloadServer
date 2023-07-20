@@ -1,9 +1,23 @@
-import json
-from flask import redirect
-import requests as rq
-import time
+from . import app
 import os
+import json
+import requests as rq
+from flask import request, send_file, redirect
 
+@app.route("/")
+def root():
+    return json.dumps({'status': "development"}) + "<a href=/auth>auth</a>"
+
+
+@app.route("/files/<file>")
+def files(file):
+    try:
+        return send_file(f"downloadables/{file}", as_attachment=True)
+    except FileNotFoundError:
+        return json.dumps({"errorMsg": "File was not Found"})
+
+
+@app.route("/dropbox/<path:path>")
 def dropbox_download(path):
     file = None
     path = "/"+path
@@ -33,3 +47,19 @@ def dropbox_download(path):
         link = request.json()["link"]
 
         return redirect(link)
+
+
+@app.route("/auth")
+def authorize_url():
+    html = '''
+    <script src="https://replit.com/public/js/repl-auth-v2.js"></script>
+    
+<button onclick="LoginWithReplit()"> Login </button>
+    '''
+    return html
+
+
+@app.route("/test")
+def webhook_dropbox():
+    replitUserId = request.headers.get("X-Replit-User-Id")
+    return replitUserId
